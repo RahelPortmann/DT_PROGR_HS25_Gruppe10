@@ -1,0 +1,6 @@
+Material,Einheit,CO2_Faktor
+Beton,m3,350
+Holz,m3,-600
+Stahl,kg,2.1
+Glas,kg,1.0
+Ziegel,kg,0.25

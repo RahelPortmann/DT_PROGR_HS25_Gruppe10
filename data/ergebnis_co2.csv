@@ -1,0 +1,4 @@
+Material_raw,Menge,Einheit_x,Material,Einheit_y,CO2_Faktor,CO2_total_kg
+Beton,2.5,m3,Beton,m3,350.0,875.0
+Stahl,120.0,kg,Stahl,kg,2.1,252.0
+Holz,0.8,m3,Holz,m3,-600.0,-480.0
