@@ -1,4 +1,11 @@
-Material_raw,Menge,Einheit_x,Material,Einheit_y,CO2_Faktor,CO2_total_kg
-Beton,2.5,m3,Beton,m3,350.0,875.0
-Stahl,120.0,kg,Stahl,kg,2.1,252.0
-Holz,0.8,m3,Holz,m3,-600.0,-480.0
+ElementGUID,ElementType,Material_raw,Menge,Einheit_x,Material,Einheit_y,CO2_Faktor,CO2_total_kg
+2UksnIZWTFkxGxtYdgQF34,IfcWall,"Beton, Stahlbeton",11.55000020861626,m3,"Beton, Stahlbeton",,,
+0iPZZ9yyH5MAeEAgQW4N2X,IfcWall,"Beton, Stahlbeton",6.327750109374516,m3,"Beton, Stahlbeton",,,
+3ycx28P6v0owZ4hKD1EDFQ,IfcWall,"Beton, Stahlbeton",11.27775019878148,m3,"Beton, Stahlbeton",,,
+2UkJMf_UfBvfwFklVLgZpA,IfcWall,"Beton, Stahlbeton",6.055500099539748,m3,"Beton, Stahlbeton",,,
+1vDZmD4CrlIBu7_h6Xygko,IfcWall,"MW, Backstein",2.752499995529649,m3,"MW, Backstein",,,
+0FikRpswvXJfELj5HDTwQQ,IfcWall,"MW, Backstein",2.44499999776483,m3,"MW, Backstein",,,
+3gjsKx8kmAHvSXlqM4zo_a,IfcWall,"MW, Backstein",1.319999997764829,m3,"MW, Backstein",,,
+2mqYs5Rk57vQocGCl4Hq5t,IfcSlab,"#399=IfcMaterialLayerSetUsage(#615,.AXIS3.,.NEGATIVE.,0.06)",5.718515985423051,m3,"#399=IfcMaterialLayerSetUsage(#615,.AXIS3.,.NEGATIVE.,0.06)",,,
+1y9cSJP8j1kR7kl2QUsa1L,IfcSlab,"#405=IfcMaterialLayerSetUsage(#626,.AXIS3.,.NEGATIVE.,0.35)",39.19999999999999,m3,"#405=IfcMaterialLayerSetUsage(#626,.AXIS3.,.NEGATIVE.,0.35)",,,
+2_s_yuupGqIAPa6aIGRX8z,IfcSlab,"#461=IfcMaterialLayerSetUsage(#626,.AXIS3.,.NEGATIVE.,0.35)",39.2,m3,"#461=IfcMaterialLayerSetUsage(#626,.AXIS3.,.NEGATIVE.,0.35)",,,
