@@ -1,6 +1,346 @@
-Material,Einheit,CO2_Faktor
-Beton,m3,350
-Holz,m3,-600
-Stahl,kg,2.1
-Glas,kg,1.0
-Ziegel,kg,0.25
+Material_ID,Material,Dichte,Einheit,CO2_Faktor
+ID-Nummer,BAUMATERIALIEN,,"Bezug
+Référence",
+,Hinweis: Anzeigen der herstellerspezifischen und herstellerregionenspezifischen Daten durch Anklicken der '+' am linken Rand.,,,
+0,Vorbereitungsarbeiten,,,
+00.001,"Baugrubensicherung, Bohrpfahlwand, gespriesst",,m2,861.0
+00.002,"Baugrubensicherung, Bohrpfahlwand, unverankert",,m2,822.0
+00.003,"Baugrubensicherung, Bohrpfahlwand, verankert",,m2,535.0
+00.004,"Baugrubensicherung, Nagelwand",,m2,121.0
+00.005,"Baugrubensicherung, Rühlwand, auskragend",,m2,270.0
+00.006,"Baugrubensicherung, Rühlwand, gespriesst",,m2,187.0
+00.007,"Baugrubensicherung, Rühlwand, verankert",,m2,197.0
+00.008,"Baugrubensicherung, Schlitzwand, 400 mm",,m2,423.0
+00.009,"Baugrubensicherung, Schlitzwand, 800 mm",,m2,809.0
+00.010,"Baugrubensicherung, Spundwand, auskragend",,m2,169.0
+00.011,"Baugrubensicherung, Spundwand, gespriesst",,m2,95.7
+00.012,"Baugrubensicherung, Spundwand, verankert",,m2,103.0
+00.013,"Tiefgründung, Mikrobohrpfahl",,m,31.4
+00.014,"Tiefgründung, Ortbetonbohrpfahl, 700 mm",,m,163.0
+00.015,"Tiefgründung, Ortbetonbohrpfahl, 900 mm",,m,244.0
+00.016,"Tiefgründung, Ortbetonbohrpfahl, 1200 mm",,m,379.0
+00.017,"Tiefgründung, Ortbetonverdrängungspfahl 560/480 mm",,m,76.5
+00.018,"Tiefgründung, Ortbetonverdrängungspfahl 660/580 mm",,m,96.0
+00.019,"Tiefgründung, Rüttelstopfsäule",,m,6.75
+00.020,"Tiefgründung, Vorgefertigter Betonpfahl",,m,29.2
+00.021,"Wasserhaltung, Pumphöhe 2.5 m",,m3,0.00517
+00.022,"Wasserhaltung, Pumphöhe 5 m",,m3,0.00604
+00.023,"Wasserhaltung, Pumphöhe 7.5 m",,m3,0.00701
+00.024,"Wasserhaltung, Pumphöhe 10 m",,m3,0.00807
+01,Beton,,,
+01.001,Magerbeton (ohne Bewehrung),2150.0,kg,0.0628
+01.001.01,"Magerbeton, NovoCon Sohlenbeton, 150 kg CEM II/C-M (F-T) (ohne Bewehrung)",1610.0,kg,0.066
+01.002,Hochbaubeton (ohne Bewehrung),2300.0,kg,0.101
+01.002.01,"Beton Klark Sorte A, 280kg CEM II/B (ohne Bewehrung)",2269.0,kg,0.105
+01.002.02,"Beton Klark Sorte A, 300kg CEM II/B (ohne Bewehrung)",2293.0,kg,0.11
+01.002.03,"Beton Klark Sorte B, 320kg CEM II/B (ohne Bewehrung)",2333.0,kg,0.114
+01.002.04,"Beton Klark Sorte C, 340kg CEM II/B (ohne Bewehrung)",2353.0,kg,0.119
+01.002.05,"Hochbaubeton, zirkulit® NPK A, 280kg CEM II/B (ohne Bewehrung)",2350.0,kg,0.0967
+01.002.06,"Hochbaubeton, zirkulit® NPK C, 300kg CEM II/B (ohne Bewehrung)",2350.0,kg,0.102
+01.002.07,"Hochbaubeton, Möckli Primärbeton, NPK A, 280 kg CEM II/B-LL (ohne Bewehrung)",2311.4,kg,0.0904
+01.002.08,"Hochbaubeton, NovoCon Light C25/E30, NPK A, 280 kg CEM II/C-M (F-T) (ohne Bewehrung)",2311.4,kg,0.0836
+01.002.09,"NovoCon RC-C25/E28, NPK A, 280 kg CEM II/B-LL (ohne Bewehrung)",2292.24,kg,
+01.002.10,"Hochbaubeton, NovoCon C50/E25, NPK A, 280 kg CEM II/C-M (F-T) (ohne Bewehrung)",2272.1,kg,0.0839
+01.002.12,"Hochbaubeton, NovoCon C50/E25, NPK C, 300 kg CEM II/C-M (F-T) (ohne Bewehrung)",2263.9,kg,0.0899
+01.002.11,"Hochbaubeton, NovoCon RC-M10/E20, NPK A, 280 kg CEM II/C-M (F-T) (ohne Bewehrung)",2252.8,kg,0.0844
+01.002.13,"Hochbaubeton, Q-A230-M10 D E25, 150 kg CEM II/B (ohne Bewehrung)",2367.6,kg,0.0685
+01.002.14,"Hochbaubeton, Q-A231-M10 D E25, 160 kg CEM II/B (ohne Bewehrung)",2377.6,kg,0.071
+01.002.15,"Hochbaubeton, Q-C330-M D, 180 kg CEM II/B (ohne Bewehrung)",2373.0,kg,0.0768
+01.002.16,"Hochbaubeton, Q-C331-M D, 185 kg CEM II/B (ohne Bewehrung)",2388.2,kg,0.0785
+01.002.17,"Hochbaubeton, Q-B265-M10 D E25, 200 kg CEM II/B, 40kg CEM I (ohne Bewehrung)",2343.6,kg,0.103
+01.002.18,"Hochbaubeton, Q-C365-M D, 220 kg CEM II/B, 40kg CEM I (ohne Bewehrung)",2333.9,kg,0.107
+01.003,Tiefbaubeton (ohne Bewehrung),2350.0,kg,0.109
+01.004,Bohrpfahlbeton (ohne Bewehrung),2325.0,kg,0.119
+01.041,"Betonfertigteil, hochfester Beton, ab Werk",2770.0,kg,0.276
+01.042,"Betonfertigteil, Normalbeton, ab Werk",2500.0,kg,0.177
+01.043,Hanfbeton,600.0,kg,0.324
+01.043.01,"Hanfbeton, ARBIO",600.0,kg,0.312
+02,Mauersteine,,,
+02.001,Backstein,900.0,kg,0.266
+02.001.01,"Backstein, perlitgefüllt, zzwancor",575.0,kg,0.283
+02.002,Kalksandstein,1400.0,kg,0.162
+02.002.01,"Kalksandstein, FBB",,kg,0.115
+02.002.02,"Kalksandstein, Hunziker Kalksandstein AG",,kg,0.106
+02.003,Leichtlehmstein,700.0,kg,0.18
+02.004,"Leichtzementstein, Blähton",1200.0,kg,0.428
+02.005,"Leichtzementstein, Naturbims",1200.0,kg,0.212
+02.006,Porenbetonstein,500.0,kg,0.426
+02.007,Zementstein,1700.0,kg,0.126
+02.007.01,"Erdstein, aus gepresster Erde, Terrabloc",1850.0,kg,0.057
+02.007.02,"Hanfsteine, Schönthaler AG",300.0,kg,0.372
+03,Andere Massivbaustoffe,,,
+03.021,Betongranulat 1,1500.0,kg,0.014
+03.001,Betonziegel,2300.0,kg,0.209
+03.002,Faserzement-Dachschindel,1800.0,kg,0.699
+03.003,Faserzementplatte gross,1800.0,kg,1.03
+03.004,Faserzement-Wellplatte,1800.0,kg,0.649
+03.005,Flachglas beschichtet,2500.0,kg,1.2
+03.006,Flachglas unbeschichtet,2500.0,kg,1.14
+03.007,Gipsfaserplatte,1200.0,kg,0.552
+03.007.01,Gipsfaserplatte Fermacell,1180.0,kg,0.335
+03.008,Gipskartonplatte,850.0,kg,0.301
+03.016,Gips-Wandbauplatte / Vollgipsplatte,1000.0,kg,0.317
+03.023,Glasfaserbeton,,,
+03.023.01,Glasfaserbeton Ecomur,2105.0,kg,0.823
+03.009,Hartsandsteinplatte,2500.0,kg,0.0406
+03.017,Kalksteinplatte,2500.0,kg,0.0736
+03.010,Keramik-/Steinzeugplatte,2600.0,kg,0.793
+03.011,Kies gebrochen 1,,kg,0.0176
+03.022,Mischgranulat 1,1600.0,kg,0.0133
+03.012,Rundkies 1,,kg,0.0157
+03.013,Sand 1,1500.0,kg,0.0157
+03.014,Sanitärkeramik,2000.0,kg,2.38
+03.020,Stampflehm,2000.0,kg,0.0194
+03.015,Tonziegel,1700.0,kg,0.385
+04,Mörtel und Putze,,,
+04.008,Baukleber/Einbettmörtel mineralisch,1400.0,kg,0.406
+04.010,Baukleber/Einbettmörtel mineralisch Leichtzuschlag,1100.0,kg,0.426
+04.002,Baukleber/Einbettmörtel organisch,1670.0,kg,0.777
+04.017,Gips-Kalk-Putz,925.0,kg,0.158
+04.001,Gips-/Weissputz,1100.0,kg,0.151
+04.003,Kunststoffputz (Dispersionsputz),1540.0,kg,0.97
+04.013,Kalk-Zement/Zement-Kalk-Putz,1550.0,kg,0.263
+04.004,Lehmputz,1800.0,kg,0.0323
+04.015,Leichtputz mineralisch,1000.0,kg,0.373
+04.011,Silikatputz (Dispersionssilikatputz),1880.0,kg,1.08
+04.012,Silikonharzputz,1670.0,kg,1.14
+04.016,Sumpfkalkputz,1350.0,kg,0.51
+04.005,"Unterlagsboden Anhydrit, 60 mm",2000.0,kg,0.0911
+04.006,"Unterlagsboden Zement, 85 mm",1850.0,kg,0.12
+04.007,Wärmedämmputz EPS,250.0,kg,0.727
+04.014,Weisszementputz,1550.0,kg,0.353
+04.009,Zementputz,1550.0,kg,0.261
+05,"Fenster, Sonnenschutz, Fassadenverkleidungen",,,
+05.008,"Fassade, Pfosten-Riegel, Alu/Glas 1",,m2,182.0
+05.022,"Fassadenplatte, Aluverbund, 4 mm",7.1,m2,43.3
+05.028,"Fassadenplatte, Glasfaserbeton",,,
+05.028.01,"Fassadenplatte, Glasfaserbeton Ecomur, 15mm",33.6,m2,29.762880000000003
+05.028.02,"Fassadenplatte, Glasfaserbeton Ecomur, 18mm",40.3,m2,35.697739999999996
+05.023,"Fassadenplatte, Hochdrucklaminatplatte (HPL), 8.1 mm",11.6,m2,46.0
+05.025,"Fassadenplatte, Kalkstein, 30 mm",78.0,m2,5.74
+05.024,"Fassadenplatte, Kunststoff glasfaserverstärkt (GFK), 1.6 mm",2.4,m2,22.1
+05.004,"Fensterrahmen Aluminium 2,5",,m2,132.0
+05.004.01,"Fensterrahmen Aluminium, WICLINE 75evo, hergestellt mit Hydro CIRCAL 75R 2,5",,m2,55.6
+05.005,"Fensterrahmen Holz 2,6",,m2,36.2
+05.005.01,"Fensterrahmen Holz, Saphir integral 67/55, G. Baumgartner AG 2,6",,m2,25.4
+05.006,"Fensterrahmen Holz-Metall 2,6",,m2,65.7
+05.006.01,"Fensterrahmen Holz-Metall, Saphir integral 55/55, G. Baumgartner AG 2,6",,m2,38.0
+05.007,"Fensterrahmen Kunststoff/PVC 2,6",,m2,63.4
+05.001,"Isolierverglasung 2-fach, Ug-Wert 1.1 W/m2K, Dicke 24 mm 3",,m2,44.3
+05.009,"Isolierverglasung 2-fach, Ug-Wert 1.1 W/m2K, Dicke 18 mm 3",,m2,48.6
+05.010,"Isolierverglasung 2-fach, ESG, Ug-Wert 1.1 W/m2K 3",,m2,52.1
+05.002,"Isolierverglasung 2-fach, VSG, Ug-Wert 1.1 W/m2K 3",,m2,79.3
+05.011,"Isolierverglasung 2-fach, ESG/VSG, Ug-Wert 1.1 W/m2K 3",,m2,87.1
+05.003,"Isolierverglasung 3-fach, Ug-Wert 0.5 W/m2K, Dicke 36 mm 3",,m2,78.3
+05.012,"Isolierverglasung 3-fach, Ug-Wert 0.6 W/m2K, Dicke 40 mm 3",,m2,67.8
+05.013,"Isolierverglasung 3-fach, ESG/ESG, Ug-Wert 0.6 W/m2K 3",,m2,83.3
+05.014,"Isolierverglasung 3-fach, ESG/ESG/ESG, Ug-Wert 0.6 W/m2K 3",,m2,91.1
+05.015,"Isolierverglasung 3-fach, VSG, Ug-Wert 0.6 W/m2K 3",,m2,103.0
+05.016,"Isolierverglasung 3-fach, ESG/VSG, Ug-Wert 0.6 W/m2K 3",,m2,111.0
+05.020,Putzträgerplatte kunstharzgebunden 13 mm,6.3,m2,8.11
+05.021,Putzträgerplatte mineralisch gebunden 12.5 mm,14.4,m2,6.31
+05.026,"Rahmenverbreiterung, PVC",15.0,m2,69.7
+05.027,"Rahmenverbreiterung, Spanplatte",17.8,m2,26.1
+05.018,"Sonnenschutz, Ausstellstoren motorisiert 4",,m2,67.8
+05.017,"Sonnenschutz, Lamellenstoren motorisiert 4",,m2,59.9
+05.019,"Sonnenschutz, Rollladen motorisiert 4",,m2,74.7
+06,Metallbaustoffe ,,,
+06.001,"Aluminiumblech, blank",2690.0,kg,5.58
+06.002,"Aluminiumprofil, blank",2690.0,kg,5.7
+06.002.01,"Aluminiumprofil blank, WICONA, hergestellt mit Hydro CIRCAL 75R",2690.0,kg,2.67
+06.003,Armierungsstahl,7850.0,kg,0.785
+06.003.01,"Armierungsstahl, Stahl Gerlafingen",7850.0,kg,0.482
+06.014,Blei,11340.0,kg,1.02
+06.004,Chromnickelstahlblech 18/8 blank,7900.0,kg,4.12
+06.005,Chromnickelstahlblech 18/8 verzinnt,7900.0,kg,5.88
+06.006,Chromstahlblech blank,7700.0,kg,2.74
+06.007,Chromstahlblech verzinnt,7700.0,kg,4.49
+06.008,"Kupferblech, blank",8900.0,kg,2.2
+06.009,Messing-/Baubronzeblech,8300.0,kg,2.71
+06.010,"Stahlblech, blank",7850.0,kg,2.8
+06.011,"Stahlblech, verzinkt",7850.0,kg,4.49
+06.012,"Stahlprofil, blank",7850.0,kg,0.737
+06.013,Titanzinkblech,7200.0,kg,4.03
+07,Holz und Holzwerkstoffe,,,
+07.001,3- und 5-Schicht Massivholzplatte,453.0,kg,0.469
+07.021,Balkenschichtholz,439.0,kg,0.342
+07.003,Brettschichtholz,439.0,kg,0.335
+07.003.01,"Brettschichtholz, Produktion Schweiz",439.0,kg,0.253
+07.002,Brettschichtholz,439.0,kg,0.335
+07.002.01,"Brettschichtholz, Produktion Schweiz",439.0,kg,0.253
+07.020,Brettsperrholz,436.0,kg,0.365
+07.020.01,"Brettsperrholz, Produktion Schweiz",424.0,kg,0.25
+07.022,Furniersperrholz,823.0,kg,1.02
+07.004,Hartfaserplatte,955.0,kg,1.07
+07.005,"Holzwolle-Leichtbauplatte, zementgebunden",400.0,kg,0.534
+7.025,Holzwolle Faschine,,,
+07.025.01,Holzwolle Quickquader-Faschine Howolis Lindner Suisse GmbH,12.6,kg,0.296
+07.023,Konstruktionsvollholz,436.0,kg,0.288
+07.008,"Massivholz Buche / Eiche, kammergetrocknet, gehobelt",675.0,kg,0.152
+07.008.01,"Massivholz Buche / Eiche, kammergetrocknet, gehobelt, Produktion Schweiz",675.0,kg,0.122
+07.007,"Massivholz Buche / Eiche, kammergetrocknet, rau",675.0,kg,0.135
+07.007.01,"Massivholz Buche / Eiche, kammergetrocknet, rau, Produktion Schweiz",675.0,kg,0.109
+07.006,"Massivholz Buche / Eiche, luftgetrocknet, rau",705.0,kg,0.12
+07.006.01,"Massivholz Buche / Eiche, luftgetrocknet, rau, Produktion Schweiz",705.0,kg,0.0979
+07.011,"Massivholz Fichte / Tanne / Lärche, kammergetr., gehobelt",465.0,kg,0.173
+07.011.01,"Massivholz Fichte / Tanne / Lärche, kammergetr., gehobelt, Produktion Schweiz",465.0,kg,0.156
+07.011.02,"Massivholz Fichte / Tanne, kammergetr., Vollholzhaus holzpur",420.0,kg,0.133
+07.010,"Massivholz Fichte / Tanne / Lärche, luftgetr., gehobelt",485.0,kg,0.156
+07.010.01,"Massivholz Fichte / Tanne / Lärche, luftgetr., gehobelt, Produktion Schweiz",485.0,kg,0.142
+07.009,"Massivholz Fichte / Tanne / Lärche, luftgetrocknet, rau",485.0,kg,0.129
+07.009.01,"Massivholz Fichte / Tanne / Lärche, luftgetrocknet, rau, Produktion Schweiz",485.0,kg,0.12
+07.012,"Mitteldichte Faserplatte (MDF), UF-gebunden",685.0,kg,0.954
+07.013,"OSB Platte, PF-gebunden, Feuchtbereich",605.0,kg,0.563
+07.024,Röhrenspanplatte,272.0,kg,0.813
+07.015,"Spanplatte, PF-gebunden, Feuchtbereich",640.0,kg,0.529
+07.016,"Spanplatte, UF-gebunden, beschichtet, Trockenbereich",640.0,kg,0.735
+07.014,"Spanplatte, UF-gebunden, Trockenbereich",640.0,kg,0.529
+07.018,"Sperrholz/Multiplex, PF-gebunden, Feuchtbereich",500.0,kg,1.43
+07.017,"Sperrholz/Multiplex, UF-gebunden, Trockenbereich",500.0,kg,0.948
+07.019,"Stabschichtholz, Buche",,,0.0
+07.019.01,"Stabschichtholz, Buche, fagus",700.0,kg,0.367
+08,Klebstoffe und Fugendichtungsmassen,,,
+08.001,2-Komponenten Klebstoff,1500.0,kg,4.84
+08.002,Heissbitumen,1000.0,kg,1.09
+08.003,Kautschukdichtungsmasse,1500.0,kg,2.42
+08.004,Polysulfiddichtungsmasse,1600.0,kg,1.72
+08.005,Silicon-Fugenmasse,1000.0,kg,2.91
+09,Dichtungsbahnen und Schutzfolien,,,
+09.001,Dampfbremse bituminös,1100.0,kg,3.64
+09.002,Dampfbremse Polyethylen (PE),920.0,kg,5.42
+09.003,Dichtungsbahn bituminös,1100.0,kg,3.33
+09.003.11,"Bituminöse Dichtungsbahn, swissporBIKUPLAN ECO",1267.0,kg,2.92
+09.003.01,"Bituminöse Dichtungsbahn, swissporBIKUTOP",1269.0,kg,3.24
+09.003.02,"Bituminöse Dichtungsbahn, swissporBIKUTOP ECO",1256.0,kg,2.88
+09.003.12,Elastomerbitumen-Dichtungsbahn Sopravap EVA 35 flam,4.6,kg,3.05
+09.003.13,Elastomerbitumen-Dichtungsbahn Sopralen EGV 3,4.0,kg,3.02
+09.003.14,Elastomerbitumen-Dichtungsbahn Sopralen EGV 3.5,4.8,kg,3.01
+09.003.15,Elastomerbitumen-Dichtungsbahn Sopralen Premier EP 5 ard flam,4.8,kg,3.06
+09.003.16,Elastomerbitumen-Dichtungsbahn Sopralen Jardin EP 5 ard flam,5.4,kg,3.07
+09.003.17,Elastomerbitumen-Dichtungsbahn Sopragum Flam HT-O Jardin S5,5.6,kg,3.38
+09.003.18,Elastomerbitumen-Dichtungsbahn SOPREMA Vapro Alpino,5.76,kg,3.38
+09.003.19,Elastomerbitumen-Dichtungsbahn SOPREMA Vapro Nature,5.76,kg,3.38
+09.004,Dichtungsbahn Gummi (EPDM),1100.0,kg,5.84
+09.005,Dichtungsbahn Polyolefin (FPO),1000.0,kg,5.18
+9.01,Holzwolle-Erosionsschutzvlies,,,
+09.010.01,Holzwolle-Erosionsschutzvlies Howolis Lindner Suisse GmbH,0.284,kg,0.835
+09.010.02,Holzwolle-Erosionsschutz-/Abdeck-/Schutz-/Dämmvlies Lindner Suisse GmbH,0.542,kg,0.546
+09.006,Kraftpapier,650.0,kg,1.67
+09.007,Polyethylenfolie (PE),920.0,kg,5.42
+09.008,Polyethylenvlies (PE),920.0,kg,5.63
+10,Wärmedämmstoffe,,,
+10.014,Aerogel-Vlies,150.0,kg,48.7
+10.012,Blähperlit,,kg,1.05
+10.011,Blähvermiculit,,kg,0.394
+10.016,Flachsfasern,30.0,kg,1.01
+10.016.01,"Flachsfasern, MAGRIPOL, Premium",30.0,kg,0.983
+10.017,"Flachsfasern, feuerfest",30.0,kg,1.45
+10.017.01,"Flachsfasern, feuerfest, MAGRIPOL, Premium+",30.0,kg,1.42
+10.001,Glaswolle,,kg,1.1
+10.001.01,"Glaswolle, Isover, phenolbasiertes Bindemittel",,kg,1.03
+10.001.03,"Glaswolle, Isover, pflanzliches Bindemittel",,kg,0.89
+10.001.02,"Glaswolle, SUPAFIL",35.0,kg,1.14
+10.002,Korkplatte,120.0,kg,1.11
+10.003,Phenolharz (PF),40.0,kg,7.26
+10.004,Polystyrol expandiert (EPS),,kg,7.6
+10.004.01,"Polystyrol expandiert, SwissporEPS",16.8,kg,6.95
+10.004.02,swissporEPS Roof ECO,26.0,kg,5.75
+10.004.03,swissporEPS R 100,28.0,kg,3.56
+10.004.04,swissporLAMBDA REC 100%,,kg,4.31
+10.004.05,swissporLAMBDA White Mono REC100%,16.0,kg,4.48
+10.004.06,swissporLAMBDA White REC 100%,16.0,kg,4.57
+10.005,Polystyrol extrudiert (XPS),,kg,14.4
+10.005.02,"Polystyrol extrudiert, JACKODUR EVO",31.1,kg,6.65
+10.005.01,"Polystyrol extrudiert, SwissporXPS",34.3,kg,6.96
+10.006,Polyurethan (PUR/PIR),30.0,kg,7.44
+10.006.01,"Polyurethan, SwissporPIR",30.0,kg,7.08
+10.007,Schaumglas,,kg,1.19
+10.007.01,"Schaumglas, GLAPOR",120.0,kg,0.707
+10.013,Schaumglasschotter,,kg,0.266
+10.013.01,"Schaumglasschotter 10/75, Misapor",,kg,0.244
+10.013.02,"Schaumglasschotter 10/50, Misapor",,kg,0.239
+10.008,Steinwolle,,kg,0.816
+10.008.01,"Steinwolle, Flumroc",,kg,0.617
+10.015,Strohballenwand,215.0,kg,0.0956
+10.009,Weichfaserplatte,147.5,kg,0.725
+10.010,Zellulosefasern,,kg,0.28
+10.010.01,"Zellulosefasern, Isofloc",,kg,0.233
+11,Bodenbeläge,,,
+11.001,"2K-Fliessbelag Industrie (Epoxidharz), 2.25 mm",4.55,m2,18.4
+11.002,"2K-Fliessbelag Wohnen/Verwaltung (Epoxidharz, PU), 2 mm",3.6,m2,13.9
+11.003,"Gummigranulat versiegelt, 7.5 mm",8.25,m2,26.8
+11.004,"Gussasphalt, 27.5 mm",63.3,m2,15.9
+11.005,"Hartbeton einschichtig, 27.5 mm",57.8,m2,16.4
+11.006,"Hartbeton zweischichtig, 35 mm",73.5,m2,16.4
+11.007,"Kautschuk, 2 mm",3.36,m2,14.1
+11.008,"Keramik-/Steinzeugplatte, 9 mm",18.0,m2,18.2
+11.009,"Kork Fertigparkett, 10.5 mm",7.8,m2,9.07
+11.010,"Kork PVC-beschichtet, 3.2 mm",2.7,m2,8.28
+11.011,"Korkparkett geölt/versiegelt, 5.3 mm",2.7,m2,3.26
+11.012,"Kunststeinplatte zementgebunden, 10 mm",21.5,m2,10.4
+11.013,"Laminat, 8.5 mm",8.5,m2,10.4
+11.014,"Linoleum, 2.5 mm",2.9,m2,6.36
+11.015,"Natursteinplatte geschliffen, 15 mm",40.5,m2,16.8
+11.015.01,"Natursteinplatte geschliffen, Europa, 15 mm",40.5,m2,16.6
+11.015.02,"Natursteinplatte geschliffen, Schweiz, 15 mm",40.5,m2,13.4
+11.015.03,"Natursteinplatte geschliffen, Übersee, 15 mm",40.5,m2,17.9
+11.016,"Natursteinplatte geschnitten, 15 mm",40.5,m2,13.4
+11.017,"Natursteinplatte poliert, 15 mm",40.5,m2,19.6
+11.018,"Parkett 2-Schicht werkversiegelt, 11 mm",6.1,m2,7.8
+11.019,"Parkett 3-Schicht werkversiegelt, 15 mm",7.9,m2,8.09
+11.020,"Parkett Mosaik werkversiegelt, 8 mm",5.6,m2,3.57
+11.021,"PVC homogen, 2 mm",3.1,m2,14.4
+11.022,"Steinholz versiegelt, 16.5 mm",22.0,m2,12.9
+11.023,"Synthetische thermoplastische Beläge (TPO), 2 mm",3.4,m2,16.0
+11.024,Teppich Kunstfaser getuftet,2.1,m2,16.7
+11.025,Teppich Nadelfilz,1.3,m2,9.84
+11.026,Teppich Naturfaser,2.7,m2,5.08
+11.027,"Terrazzo versiegelt, 40 mm",95.0,m2,17.3
+12,Türen,,,
+12.005,"Aussentüre, Aluminium, Glaseinsatz",,m2,216.0
+12.006,"Aussentüre, Aluminium, Paneelfüllung",,m2,192.0
+12.008,"Aussentüre, Holz",,m2,62.2
+12.001,"Aussentüre, Holz, aluminiumbeplankt",,m2,116.0
+12.002,"Aussentüre, Holz, Glaseinsatz",,m2,85.7
+12.007,"Innentüre, Aluminium, Glaseinsatz",,m2,166.0
+12.009,"Innentüre, Funktionstüre, Holz, Holzrahmen",,m2,44.3
+12.012,"Innentüre, Funktionstüre, Holz, Stahlzarge",,m2,96.8
+12.004,"Innentüre, Zimmertüre, Holz, Glaseinsatz, Holzrahmen",,m2,59.7
+12.011,"Innentüre, Zimmertüre, Holz, Glaseinsatz, Stahlzarge",,m2,112.0
+12.003,"Innentüre, Zimmertüre, Holz, Holzrahmen",,m2,32.3
+12.010,"Innentüre, Zimmertüre, Holz, Stahlzarge",,m2,84.8
+13,Rohre,,,
+13.001,Acrylnitril-Butadien-Styrol (ABS),1050.0,kg,7.67
+13.005,Gusseisen,7850.0,kg,2.09
+13.002,Polyethylen (PE),960.0,kg,4.75
+13.003,Polypropylen (PP),910.0,kg,4.78
+13.004,Polyvinylchlorid (PVC),1390.0,kg,4.49
+14,"Anstrichstoffe, Beschichtungen",,,
+14.002,"Anstrich, lösemittelverdünnbar, 2 Anstriche",0.3,m2,0.975
+14.001,"Anstrich, wasserverdünnbar, 2 Anstriche",0.3,m2,0.701
+14.003,"Bitumenemulsion, 1 Anstrich",0.25,m2,0.181
+14.004,"Emaillieren, Metall",,m2,8.11
+14.005,"Pulverbeschichten, Aluminium",,m2,3.64
+14.006,"Pulverbeschichten, Stahl",,m2,4.38
+14.007,"Verchromen, Stahl",,m2,0.609
+14.008,"Verzinken, Stahl",,m2,6.09
+15,Kunststoffe,,,
+15.001,"Plexiglas (PMMA, Acrylglas)",1180.0,kg,11.6
+15.002,Polyamid (PA) glasfaserverstärkt,1360.0,kg,11.5
+15.003,Polycarbonat (PC),1200.0,kg,11.4
+15.004,Polyester (UP) glasfaserverstärkt,1500.0,kg,9.84
+15.005,Polystyrol (PS),1050.0,kg,6.72
+21,Kücheneinbauten und -möbel,,,
+21.001,Abfalltrennsystem,,Stk.,24.2
+21.002,"Arbeitsplatte Chromstahl, high-end",,m2,332.0
+21.003,"Arbeitsplatte Chromstahl, Standard",,m2,56.8
+21.004,Arbeitsplatte Kompositwerkstoff (auf Aluminiumhydroxidbasis),,m2,95.5
+21.005,Arbeitsplatte kunstharzbeschichtet,,m2,20.2
+21.006,Arbeitsplatte Massivholz,,m2,12.6
+21.007,Arbeitsplatte Naturstein,,m2,41.1
+21.008,Dampfabzug,,Stk.,151.0
+21.009,"Küche, Massivholz, 16-teilig",,Stk.,470.0
+21.010,"Küche, Metall, 16-teilig",,Stk.,2770.0
+21.011,"Küche, Spanplatte, 16-teilig",,Stk.,632.0
+21.012,Spüle Chromstahl,,Stk.,48.6
+21.013,Spüle Kompositwerkstoff (auf Gesteinsmehlbasis),,Stk.,30.7
