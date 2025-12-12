@@ -1,160 +1,171 @@
-# -*- coding: utf-8 -*-
-# IFC → KBOB → CO2 Berechnung
-
-import os
-import pandas as pd
 import ifcopenshell
+import pandas as pd
 
 
-# ---------------------------------------------------------
-# 1) IFC einlesen und Material + Mengen extrahieren
-# ---------------------------------------------------------
+# ==================================================
+# Hilfsfunktion: Dichte bereinigen (MITTELWERT)
+# ==================================================
+def parse_density(value):
+    """
+    Wandelt KBOB-Dichtewerte um:
+    - '32-160'  -> 96
+    - '2300'    -> 2300
+    - leer / NaN -> None
+    """
+    if pd.isna(value):
+        return None
 
-def load_ifc_materials(ifc_path: str) -> pd.DataFrame:
+    value = str(value).strip()
+
+    if "-" in value:
+        try:
+            a, b = value.split("-")
+            return (float(a) + float(b)) / 2
+        except:
+            return None
+
+    try:
+        return float(value)
+    except:
+        return None
+
+
+# ==================================================
+# Volumen robust aus IFC lesen (WÄNDE + DECKEN)
+# ==================================================
+def get_volume(element):
+    if not element.IsDefinedBy:
+        return None
+
+    for rel in element.IsDefinedBy:
+        if not rel.is_a("IfcRelDefinesByProperties"):
+            continue
+
+        prop = rel.RelatingPropertyDefinition
+        if not prop.is_a("IfcElementQuantity"):
+            continue
+
+        for q in prop.Quantities:
+            if q.is_a("IfcQuantityVolume"):
+                return q.VolumeValue
+
+    return None
+
+
+# ==================================================
+# IFC Materialien + Volumen laden
+# ==================================================
+def load_ifc_materials(ifc_path):
     ifc = ifcopenshell.open(ifc_path)
-    elements = []
+    rows = []
 
-    for product in ifc.by_type("IfcBuildingElement"):
+    elements = (
+        ifc.by_type("IfcWall")
+        + ifc.by_type("IfcWallStandardCase")
+        + ifc.by_type("IfcSlab")      # DECKEN
+        + ifc.by_type("IfcRoof")
+        + ifc.by_type("IfcBeam")
+        + ifc.by_type("IfcColumn")
+    )
 
-        mats = product.HasAssociations
-        if not mats:
-            continue
+    for element in elements:
+        element_id = element.GlobalId
+        ifc_type = element.is_a()
 
-        # Material extrahieren
-        material_name = None
-        for assoc in mats:
-            if assoc.is_a("IfcRelAssociatesMaterial"):
-                mat = assoc.RelatingMaterial
+        # -------------------------
+        # MATERIAL (ALLE IFC-FÄLLE)
+        # -------------------------
+        material = None
+
+        if element.HasAssociations:
+            for rel in element.HasAssociations:
+                if not rel.is_a("IfcRelAssociatesMaterial"):
+                    continue
+
+                mat = rel.RelatingMaterial
+
+                # 1) Einfaches Material
                 if mat.is_a("IfcMaterial"):
-                    material_name = mat.Name
-                elif mat.is_a("IfcMaterialLayerSet"):
-                    try:
-                        material_name = mat.MaterialLayers[0].Material.Name
-                    except:
-                        pass
+                    material = mat.Name
 
-        if not material_name:
+                # 2) LayerSetUsage (typisch bei Slabs!)
+                elif mat.is_a("IfcMaterialLayerSetUsage"):
+                    layers = mat.ForLayerSet.MaterialLayers
+                    if layers:
+                        material = layers[0].Material.Name
+
+                # 3) LayerSet
+                elif mat.is_a("IfcMaterialLayerSet"):
+                    layers = mat.MaterialLayers
+                    if layers:
+                        material = layers[0].Material.Name
+
+        if not material:
             continue
 
-        # Volumen extrahieren
-        volume = None
-        quantity_sets = product.IsDefinedBy
-        if quantity_sets:
-            for rel in quantity_sets:
-                if rel.is_a("IfcRelDefinesByProperties"):
-                    props = rel.RelatingPropertyDefinition
-                    if props.is_a("IfcElementQuantity"):
-                        for q in props.Quantities:
-                            if q.is_a("IfcQuantityVolume"):
-                                volume = q.VolumeValue
-
+        # -------------------------
+        # VOLUMEN
+        # -------------------------
+        volume = get_volume(element)
         if volume is None:
             continue
 
-        elements.append({
-            "Material_raw": str(material_name),
-            "Menge": float(volume),     # m³
+        rows.append({
+            "Element_ID": element_id,
+            "Ifc_Typ": ifc_type,
+            "Material_raw": material.strip(),
+            "Menge": volume,
             "Einheit_IFC": "m3"
         })
 
-    return pd.DataFrame(elements)
+    return pd.DataFrame(rows)
 
 
-# ---------------------------------------------------------
-# 2) KBOB laden (Material, Dichte, CO2-Faktor)
-# ---------------------------------------------------------
-
-DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
-KBOB_CSV = os.path.join(DATA_DIR, "kbob_materialien.csv")
-
-def load_kbob(path: str) -> pd.DataFrame:
-    df = pd.read_csv(path, encoding="utf-8")
+# ==================================================
+# KBOB CSV laden + Dichte bereinigen
+# ==================================================
+def load_kbob(csv_path):
+    df = pd.read_csv(csv_path)
 
     df["Material"] = df["Material"].astype(str).str.strip()
-    df["CO2_Faktor"] = pd.to_numeric(df["CO2_Faktor"], errors="coerce")
-    df["Dichte"] = pd.to_numeric(df["Dichte"], errors="coerce")
+    df["Dichte"] = df["Dichte"].apply(parse_density)
 
-    df = df.dropna(subset=["Material"])
     return df
 
 
-# ---------------------------------------------------------
-# 3) Material-Mapping
-# ---------------------------------------------------------
-
-def build_mapping():
-    return {
-        "stahlbeton": "hochbaubeton",
-        "beton": "hochbaubeton",
-        "mauerwerk": "backstein",
-        "backstein": "backstein",
-        "ziegel": "backstein",
-    }
+# ==================================================
+# 1:1 Mapping über Materialnamen
+# ==================================================
+def apply_mapping(df_ifc, kbob):
+    return df_ifc.merge(
+        kbob,
+        left_on="Material_raw",
+        right_on="Material",
+        how="left"
+    )
 
 
-def apply_mapping(df_ifc, df_kbob):
-    df = df_ifc.copy()
-    keywords = build_mapping()
+# ==================================================
+# CO₂ Berechnung
+# ==================================================
+def merge_and_compute(mapped_df):
+    df = mapped_df.copy()
 
-    def match_material(raw):
-        raw_lower = str(raw).lower()
+    # Masse
+    df["Masse_kg"] = df.apply(
+        lambda r: r["Menge"] * r["Dichte"]
+        if pd.notna(r["Dichte"])
+        else None,
+        axis=1
+    )
 
-        for key, kb_keyword in keywords.items():
-            if key in raw_lower:
+    # CO₂
+    df["CO2_total_kg"] = df.apply(
+        lambda r:
+            r["Masse_kg"] * r["CO2_Faktor"]
+            if pd.notna(r["Masse_kg"]) and pd.notna(r["CO2_Faktor"])
+            else None,
+        axis=1
+    )
 
-                candidates = df_kbob[df_kbob["Material"].str.lower().str.contains(kb_keyword)]
-
-                # Tiefgründungen vermeiden
-                candidates = candidates[
-                    ~candidates["Material"].str.lower().str.contains("tief")
-                ]
-                candidates = candidates[
-                    ~candidates["Material"].str.lower().str.contains("pfahl")
-                ]
-
-                if not candidates.empty:
-                    return candidates.iloc[0]["Material"]
-
-        return raw
-
-    df["Material"] = df["Material_raw"].apply(match_material)
     return df
-
-
-# ---------------------------------------------------------
-# 4) Merge + korrekte CO2 Berechnung
-# ---------------------------------------------------------
-
-def merge_and_compute(df_ifc, df_kbob):
-
-    merged = pd.merge(df_ifc, df_kbob, on="Material", how="left")
-
-    # Numerische Felder sicherstellen
-    merged["Dichte"] = pd.to_numeric(merged["Dichte"], errors="coerce")
-    merged["CO2_Faktor"] = pd.to_numeric(merged["CO2_Faktor"], errors="coerce")
-
-    # Masse (kg) = Volumen (m3) × Dichte (kg/m3)
-    merged["Masse_kg"] = merged["Menge"] * merged["Dichte"]
-
-    # CO2 total = Masse × Faktor
-    merged["CO2_total_kg"] = merged["Masse_kg"] * merged["CO2_Faktor"]
-
-    merged["Einheit_KBOB"] = "kg"
-
-    return merged
-
-
-# ---------------------------------------------------------
-# 5) Exportfunktion
-# ---------------------------------------------------------
-
-EXPORT_CSV = os.path.join(DATA_DIR, "ergebnis_co2.csv")
-
-def export_results(df, path=EXPORT_CSV):
-    df.to_csv(path, index=False, encoding="utf-8")
-    print(f"CSV exportiert nach: {path}")
-
-
-# ---------------------------------------------------------
-# Ende
-# ---------------------------------------------------------

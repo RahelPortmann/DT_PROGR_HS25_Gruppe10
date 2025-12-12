@@ -1,1 +1,17 @@
-\venv
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+venv/
+
+# IFC temp files
+temp.ifc
+*.ifc
+
+# macOS / Windows
+.DS_Store
+
+# Generated results
+data/Ergebnis_*.csv
+Excel_CSV/
